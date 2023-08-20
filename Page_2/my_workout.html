@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Craft - My Workout</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,601,600,401,501,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="title_and_logo">
+            <h1>Fit Craft</h1>
+            <img class="barbell_pic" src="../images/barbell_logo_4.png" alt="Logo">
+        </div>
+        <h3>Your Personal Workout Building Tool</h3>
+    </header>
+
+    <div class="library_and_workout_buttons">
+        <div class="inside_library_and_workout_buttons">
+            <a href="../Page_1/exercise_library.html">
+                <button class="library_button"><i class="fa-solid fa-book"></i><span>Exercise Library</span></button>
+            </a>
+            <button class="workout_button"><i class="fa-solid fa-heart-pulse"></i><span>My Workout</span></button>
+        </div>
+    </div>
+
+    <div class="selected_exercises_section">
+        <div class="selected_exercises_title"><span>Selected Exercises</span>
+            <button class="selected_exercises_title_button" onclick="toggleSelectedExercises()">View Exercises</button>
+        </div>
+        <div id="selected_exercises_container" class="selected_exercises_container">
+            <!-- User's Selected Exercises Go Here -->
+        </div>
+        <div class="clear_exercises_button">
+            <button onclick="clearExercises()">Clear Exercises</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="title">My Workout</div>
+            <div class="labels">
+                <div class="label_1">#</div>
+                <div class="label_2">Exercise</div>
+                <div class="label_3">Weight</div>
+                <div class="label_4">Sets</div>
+                <div class="label_5">Reps</div>
+                <div class="label_6">Notes</div>
+                <div class="label_7">Completed</div>
+            </div>
+            <div class="row row_1">
+                <div class="col_1 r1c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r1c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r1c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r1c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r1c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r1c6" id="r1c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r1c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r1c8">X</div>
+                <div class="col_9 r1c9" onclick="toggleNotes()"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_2">
+                <div class="col_1 r2c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r2c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r2c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r2c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r2c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r2c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r2c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r2c8">X</div>
+                <div class="col_9 r2c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_3">
+                <div class="col_1 r3c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r3c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r3c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r3c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r3c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r3c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r3c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r3c8">X</div>
+                <div class="col_9 r3c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_4">
+                <div class="col_1 r4c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r4c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r4c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r4c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r4c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r4c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r4c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r4c8">X</div>
+                <div class="col_9 r4c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_5">
+                <div class="col_1 r5c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r5c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r5c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r5c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r5c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r5c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r5c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r5c8">X</div>
+                <div class="col_9 r5c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_6">
+                <div class="col_1 r6c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r6c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r6c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r6c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r6c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r6c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r6c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r6c8">X</div>
+                <div class="col_9 r6c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_7">
+                <div class="col_1 r7c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r7c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r7c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r7c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r7c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r7c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r7c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r7c8">X</div>
+                <div class="col_9 r7c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_8">
+                <div class="col_1 r8c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r8c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r8c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r8c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r8c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r8c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r8c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r8c8">X</div>
+                <div class="col_9 r8c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_9">
+                <div class="col_1 r9c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r9c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r9c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r9c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r9c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r9c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r9c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r9c8">X</div>
+                <div class="col_9 r9c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_10">
+                <div class="col_1 r10c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r10c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r10c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r10c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r10c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r10c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r10c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r10c8">X</div>
+                <div class="col_9 r10c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_11">
+                <div class="col_1 r11c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r11c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r11c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r11c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r11c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r11c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r11c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r11c8">X</div>
+                <div class="col_9 r11c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_12">
+                <div class="col_1 r12c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r12c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r12c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r12c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r12c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r12c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r12c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r12c8">X</div>
+                <div class="col_9 r12c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_13">
+                <div class="col_1 r13c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r13c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r13c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r13c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r13c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r13c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r13c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r13c8">X</div>
+                <div class="col_9 r13c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_14">
+                <div class="col_1 r14c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r14c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r14c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r14c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r14c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r14c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r14c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r14c8">X</div>
+                <div class="col_9 r14c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_15">
+                <div class="col_1 r15c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r15c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r15c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r15c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r15c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r15c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r15c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r15c8">X</div>
+                <div class="col_9 r15c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_16">
+                <div class="col_1 r16c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r16c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r16c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r16c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r16c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r16c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r16c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r16c8">X</div>
+                <div class="col_9 r16c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_17">
+                <div class="col_1 r17c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r17c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r17c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r17c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r17c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r17c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r17c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r17c8">X</div>
+                <div class="col_9 r17c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_18">
+                <div class="col_1 r18c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r18c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r18c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r18c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r18c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r18c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r18c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r18c8">X</div>
+                <div class="col_9 r18c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_19">
+                <div class="col_1 r19c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r19c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r19c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r19c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r19c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r19c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r19c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r19c8">X</div>
+                <div class="col_9 r19c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="row row_20">
+                <div class="col_1 r20c1"><textarea class="number_input textarea" placeholder="Order #"></textarea></div>
+                <div class="col_2 r20c2"><textarea class="name_input textarea" placeholder="Exercise"></textarea></div>
+                <div class="col_3 r20c3"><textarea class="weight_input textarea" placeholder="Weight"></textarea></div>
+                <div class="col_4 r20c4"><textarea class="sets_input textarea" placeholder="Sets"></textarea></div>
+                <div class="col_5 r20c5"><textarea class="reps_input textarea" placeholder="Reps"></textarea></div>
+                <div class="col_6 r20c6"><textarea class="notes_input textarea" placeholder="Notes"></textarea></div>
+                <div class="col_7 r20c7"><input type="checkbox" class="checkbox"></div>
+                <div class="col_8 r20c8">X</div>
+                <div class="col_9 r20c9"><i class="fa-regular fa-comment-dots"></i></div>
+            </div>
+            <div class="table_buttons">
+                <button id="toggle_button"class="edit_button"><i class="fa-regular fa-floppy-disk icon"></i>
+                    <span class="button_text"> Save Changes</span></button>
+                    <button id="clearWorkoutBtn">Clear Workout</button>
+                <div class="num_exercises">
+                    <span class="num_exercises_text"># of Exercises:</span>
+                    <span class="minus"><i class="fa-solid fa-minus"></i></span>
+                    <input type="text" class="num_input" value="1" readonly="readonly">
+                    <span class="plus"><i class="fa-solid fa-plus"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="helpful_info">
+            <nav>
+                <ul>
+                    <li><a id="body_mass_index_button"><span>BMI Calculator</span></a></li>
+                    <li><a id="body_comp_button"><span>Body Composition</span></a></li>
+                    <li><a id="stopwatch_timer_button"><span>Stopwatch / Timer</span></a></li>
+                    <li><a id="reps_and_maxes_button"><span>1RM Calculator</span></a></li>
+                </ul>
+            </nav>
+            <div id="bmi" class="bmi">
+                <div class="bmi_section_title">BMI Calculator</div>
+                    <div class="bmi_input_section">
+                        <div class="bmi_height">
+                            <p>Height:</p>
+                            <input type="text" id="feet-input" class="height-input" placeholder=" ft.">
+                            <input type="text" id="inches-input" class="height-input" placeholder=" in.">
+                        </div>
+                        <div class="bmi_weight">
+                            <p>Weight:</p>
+                            <input type="text" id="weight-input" class="weight-input" placeholder=" lbs.">
+                        </div>
+                    </div>
+                    <div class="calculate_bmi_button">
+                        <button>Calculate</button>
+                    </div>
+                    <div class="bmi_results_section">
+                        <div class="your_bmi_is">
+                            <p>Your BMI is</p>
+                            <div id="user-bmi" class="user_bmi">100</div>
+                        </div>
+                        <div class="bmi_categories">
+                            <div class="underweight">
+                                <span>Underweight</span><br>&lt; 18.5
+                            </div>
+                            <div class="normal_weight">
+                                <span>Normal Weight</span><br>18.5 - 24.9
+                            </div>
+                            <div class="overweight">
+                                <span>Overweight</span><br>25 - 29.9
+                            </div>
+                            <div class="obese">
+                                <span>Obese</span><br>&ge; 30
+                            </div>
+                        </div>
+                        <div class="bmi_side_note">
+                            *Note: BMI may not be the most accurate for individuals with
+                            greater muscle mass (such as athletes) or in
+                            older populations who have lost muscle mass.
+                        </div>
+                    </div>
+            </div>
+            <div id="body_composition" class="body_composition">
+                <div class="mens_body_comp_container">
+                    <div class="mens_body_comp_title">Men's Body Composition Categories by Age Group</div>
+                    <div class="mens_body_comp_table">
+                        <div class="mens_body_comp_table_titles">
+                            <div class="mens_body_comp_category_title">Category</div>
+                            <div class="mens_body_comp_age_title">Age (year)</div>
+                        </div>
+                        <div class="mens_body_comp_table_subtitle">
+                            <div class="mens_body_comp_age_1">20-29</div>
+                            <div class="mens_body_comp_age_2">30-39</div>
+                            <div class="mens_body_comp_age_3">40-49</div>
+                            <div class="mens_body_comp_age_4">50-59</div>
+                            <div class="mens_body_comp_age_5">60+</div>
+                        </div>
+                        <div class="mens_very_low">
+                            <div class="mens_category_1">Very Low</div>
+                            <div class="mens_age_1">4-6%</div>
+                            <div class="mens_age_2">7-10%</div>
+                            <div class="mens_age_3">9-13%</div>
+                            <div class="mens_age_4">11-15%</div>
+                            <div class="mens_age_5">12-16%</div>
+                        </div>
+                        <div class="mens_low">
+                            <div class="mens_category_2">Low</div>
+                            <div class="mens_age_1-2">7-10%</div>
+                            <div class="mens_age_2">11-14%</div>
+                            <div class="mens_age_3">14-17%</div>
+                            <div class="mens_age_4">16-19%</div>
+                            <div class="mens_age_5">17-20%</div>
+                        </div>
+                        <div class="mens_good">
+                            <div class="mens_category_3">Good</div>
+                            <div class="mens_age_1-3">11-14%</div>
+                            <div class="mens_age_2">15-18%</div>
+                            <div class="mens_age_3">18-21%</div>
+                            <div class="mens_age_4">20-22%</div>
+                            <div class="mens_age_5">21-23%</div>
+                        </div>
+                        <div class="mens_fair">
+                            <div class="mens_category_4">Fair</div>
+                            <div class="mens_age_1-4">15-18%</div>
+                            <div class="mens_age_2">19-22%</div>
+                            <div class="mens_age_3">22-24%</div>
+                            <div class="mens_age_4">23-25%</div>
+                            <div class="mens_age_5">24-26%</div>
+                        </div>
+                        <div class="mens_high">
+                            <div class="mens_category_5">High</div>
+                            <div class="mens_age_1-5">19-25%</div>
+                            <div class="mens_age_2">23-26%</div>
+                            <div class="mens_age_3">25-27%</div>
+                            <div class="mens_age_4">26-29%</div>
+                            <div class="mens_age_5">27-29%</div>
+                        </div>
+                        <div class="mens_very_high">
+                            <div class="mens_category_6">Very High</div>
+                            <div class="mens_age_1-6">&gt; 25%</div>
+                            <div class="mens_age_2">&gt; 26%</div>
+                            <div class="mens_age_3">&gt; 27%</div>
+                            <div class="mens_age_4">&gt; 29%</div>
+                            <div class="mens_age_5">&gt; 29%</div>
+                        </div>
+                    </div>
+                    <div class="mens_body_comp_side_note">
+                        *No less than 3% body fat is recommended for men.<br>
+                        **These are intended to be guidelines for the general population.
+                    </div>
+                </div>
+                <div class="womens_body_comp_container">
+                    <div class="womens_body_comp_title">Women's Body Composition Categories by Age Group</div>
+                    <div class="womens_body_comp_table">
+                        <div class="womens_body_comp_table_titles">
+                            <div class="womens_body_comp_category_title">Category</div>
+                            <div class="womens_body_comp_age_title">Age (year)</div>
+                        </div>
+                        <div class="womens_body_comp_table_subtitle">
+                            <div class="womens_body_comp_age_1">20-29</div>
+                            <div class="womens_body_comp_age_2">30-39</div>
+                            <div class="womens_body_comp_age_3">40-49</div>
+                            <div class="womens_body_comp_age_4">50-59</div>
+                            <div class="womens_body_comp_age_5">60+</div>
+                        </div>
+                        <div class="womens_very_low">
+                            <div class="womens_category_1">Very Low</div>
+                            <div class="womens_age_1">11-14%</div>
+                            <div class="womens_age_2">11-14%</div>
+                            <div class="womens_age_3">12-15%</div>
+                            <div class="womens_age_4">13-17%</div>
+                            <div class="womens_age_5">13-18%</div>
+                        </div>
+                        <div class="womens_low">
+                            <div class="womens_category_2">Low</div>
+                            <div class="womens_age_1-2">15-17%</div>
+                            <div class="womens_age_2">15-17%</div>
+                            <div class="womens_age_3">16-18%</div>
+                            <div class="womens_age_4">18-21%</div>
+                            <div class="womens_age_5">19-22%</div>
+                        </div>
+                        <div class="womens_good">
+                            <div class="womens_category_3">Good</div>
+                            <div class="womens_age_1-3">18-20%</div>
+                            <div class="womens_age_2">18-21%</div>
+                            <div class="womens_age_3">19-24%</div>
+                            <div class="womens_age_4">22-26%</div>
+                            <div class="womens_age_5">23-27%</div>
+                        </div>
+                        <div class="womens_fair">
+                            <div class="womens_category_4">Fair</div>
+                            <div class="womens_age_1-4">21-24%</div>
+                            <div class="womens_age_2">22-25%</div>
+                            <div class="womens_age_3">25-27%</div>
+                            <div class="womens_age_4">27-30%</div>
+                            <div class="womens_age_5">28-30%</div>
+                        </div>
+                        <div class="womens_high">
+                            <div class="womens_category_5">High</div>
+                            <div class="womens_age_1-5">25-30%</div>
+                            <div class="womens_age_2">26-31%</div>
+                            <div class="womens_age_3">28-33%</div>
+                            <div class="womens_age_4">31-34%</div>
+                            <div class="womens_age_5">31-35%</div>
+                        </div>
+                        <div class="womens_very_high">
+                            <div class="womens_category_6">Very High</div>
+                            <div class="womens_age_1-6">&gt; 30%</div>
+                            <div class="womens_age_2">&gt; 31%</div>
+                            <div class="womens_age_3">&gt; 33%</div>
+                            <div class="womens_age_4">&gt; 34%</div>
+                            <div class="womens_age_5">&gt; 35%</div>
+                        </div>
+                    </div>
+                    <div class="womens_body_comp_side_note">
+                        *No less than 10% body fat is recommended for women.<br>
+                        **These are intended to be guidelines for the general population.
+                    </div>
+                </div>
+            </div>
+            <div id="stopwatch_timer" class="stopwatch_timer">
+                <div class="stopwatch_container">
+                    <div id="stopwatch_display" class="displayed_time">
+                        <p>00:00:00</p>
+                    </div>
+                    <div class="stopwatch_buttons">
+                        <button class="stop_stopwatch" onclick="watchStop()"><i class="fa-solid fa-stop"></i></button>
+                        <button class="start_stopwatch" onclick="watchStart()"><i class="fa-solid fa-play"></i></button>
+                        <button class="reset_stopwatch" onclick="watchReset()"><i class="fa-solid fa-rotate-left"></i></button>
+                    </div>
+                </div>
+                <div class="main-container center">
+                    <!--progress indicator-->
+                    <div class="circle-container center">
+                        <div class="semicircle"></div>
+                        <div class="semicircle"></div>
+                        <div class="semicircle"></div>
+                        <div class="outermost-circle"></div>
+                    </div>
+            
+                    <!--timer-->
+                    <div class="timer-container center">
+                        <div class="timer center"></div>
+                    </div>
+                </div>
+                <div class="timer_controls">
+                    <div class="timer_user_inputs">
+                        <div class="timer_minutes_section">
+                            <span class="timer_minutes_text"><span>Minutes:</span></span>
+                            <span class="timer_minutes_minus"><i class="fa-solid fa-minus"></i></span>
+                            <input type="text" class="timer_minutes_input" value="0" readonly="readonly">
+                            <span class="timer_minutes_plus"><i class="fa-solid fa-plus"></i></span>
+                        </div>
+                        <div class="timer_seconds_section">
+                            <span class="timer_seconds_text"><span>Seconds:</span></span>
+                            <span class="timer_seconds_minus"><i class="fa-solid fa-minus"></i></span>
+                            <input type="text" class="timer_seconds_input" value="0" readonly="readonly">
+                            <span class="timer_seconds_plus"><i class="fa-solid fa-plus"></i></span>
+                        </div>
+                    </div>
+                    <div class="timer_buttons">
+                        <button class="stop_timer"><i class="fa-solid fa-stop"></i></button>
+                        <button class="start_timer"><i class="fa-solid fa-play"></i></button>
+                        <button class="reset_timer"><i class="fa-solid fa-rotate-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="reps_and_maxes" class="reps_and_maxes">
+                <div class="estimated_max_calculator_container">
+                    <div class="estimated_max_calculator_title">Estimated Max Calculator</div>
+                    <div class="estimated_max_input_titles">
+                        <p>Weight Lifted:</p>
+                        <p># of Reps:</p>
+                    </div>
+                    <div class="estimated_max_input_section">
+                        <input type="text" class="weight_lifted_input" placeholder=" lbs.">
+                        <input type="text" class="reps_performed_input" placeholder=" Reps">
+                    </div>
+                    <div class="calculate_estimated_max_button">
+                        <button>Calculate</button>
+                    </div>
+                    <div class="estimated_max_results_section">
+                        <div class="estimated_max_results_title">
+                            Estimated 1RM:
+                        </div>
+                        <div class="estimated_max_results_number">
+                            <span class="user_estimated_max_result">100</span>lbs.
+                        </div>
+                        <div class="estimated_max_results_side_note">
+                            *Note: The greater the number of reps performed, the less accurate the estimation will be.
+                            Works best for reps &le; 10.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

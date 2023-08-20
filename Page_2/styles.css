@@ -1,0 +1,2260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'General Sans', sans-serif;
+  }
+
+body {
+    background: #070a13;
+  }
+
+/* container for top of webpage (h1, barbell pic, & h3) */
+header {
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* container for title and logo */
+.title_and_logo {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* title of website */
+h1 {
+    background: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding-right: 0.5rem;
+    
+}
+
+/* barbell picture next to title */
+.barbell_pic {
+    width: 20rem;
+  }
+  
+  /* slogan under title and barbell logo */
+  h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.7rem;
+  }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*container for exercise library and my workout buttons & search bar */
+.library_and_workout_buttons {
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 10px;
+    border-width: 1px;
+    background: #1A1E2A;
+}
+
+.inside_library_and_workout_buttons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* exercise library button */
+.library_button {
+    background-image: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.library_button span {
+    margin-left: 0.5rem;
+}
+
+.library_button:hover {
+  transform: scale(1.05);
+}
+
+.library_button:active {
+  transform: scale(0.95);
+}
+
+/* my workout button */
+.workout_button {
+  background-image: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.workout_button span {
+  margin-left: 0.5rem;
+}
+
+.workout_button:hover {
+  transform: scale(1.05);
+}
+
+.workout_button:active {
+  transform: scale(0.95);
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.selected_exercises_section {
+    margin: 1.5rem 1rem;
+    background: #1A1E2A;
+    border-radius: 10px;
+    padding-bottom: 1rem;
+}
+
+.selected_exercises_title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.selected_exercises_title button {
+    display: none;
+}
+
+.selected_exercises_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: white;
+    margin: 0rem 1rem;
+    border: 2px dashed #6a11cb;
+}
+
+.selected_exercises_container p {
+    margin: 0.5rem;
+    border: 2px solid #2575fc;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+}
+
+.clear_exercises_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.clear_exercises_button button {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    background: red;
+    cursor: pointer;
+}
+
+.clear_exercises_button button:hover {
+    transform: scale(1.05);
+  }
+  
+.clear_exercises_button button:active {
+transform: scale(0.95);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* the entire table section*/
+.container {
+    display: grid;
+    border-radius: 10px;
+    grid-auto-flow: row;
+    grid-auto-rows: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #1A1E2A;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* customize checkboxes */
+input[type="checkbox"]::before {
+    content: "\2714";
+    font-size: 1rem;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid rgb(30, 30, 30);
+    background-color: rgb(188, 188, 188);
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: transparent;
+    border-radius: 5px;
+    margin-top: 0.4rem;
+}
+
+input[type="checkbox"]:checked::before {
+    background-color: rgb(42, 200, 42);
+    color: white;
+    border: 2px solid black;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* title of table */
+.title {
+    display: flex;
+    justify-content: center;
+    color: #2575fc;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.75rem 0rem;
+}
+
+#toggle_button {
+    align-self: flex-end;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* column headers */
+.labels {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+    gap: 1rem;
+    color: #2575fc;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.label_1 {
+    flex: 1 1 2rem;
+    text-align: center;
+}
+
+.label_2 {
+    flex: 3 1 10rem;
+    text-align: center;
+}
+
+.label_3 {
+    flex: 1 1 4rem;
+    text-align: center;
+}
+
+.label_4 {
+    flex: 1 1 2rem;
+    text-align: center;
+}
+
+.label_5 {
+    flex: 1 1 4rem;
+    text-align: center;
+}
+
+.label_6 {
+    flex: 3 1 8rem;
+    text-align: center;
+}
+
+.label_7 {
+    flex: 1 1 4rem;
+    text-align: center;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* customize rows */
+.row {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    border: 1px solid #6a11cb;
+    border-radius: 5px;
+    margin-bottom: 0.75rem;
+    background-color: #2d2d2d;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(106, 17, 203, 0.75); 
+    box-shadow: 0px 0px 8px 2px rgba(106, 17, 203, 0.75);
+}
+
+.row_1 {
+    margin-top: 0.75rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* customize the textareas */
+textarea {
+    width: 100%;
+    height: 2.5rem;
+    resize: none;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    background-color: #2d2d2d;
+    border: dashed 1px black;
+    padding-top: 0.65rem;
+}
+
+.no_border {
+    border: none;
+}
+
+.hide_placeholder::placeholder {
+    color: transparent;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* set the size/width of each column */
+.col_1 {
+    flex: 1 1 2rem;
+}
+
+.col_2 {
+    flex: 3 1 10rem;
+}
+
+.col_3 {
+    flex: 1 1 4rem;
+}
+
+.col_4 {
+    flex: 1 1 2rem;
+}
+
+.col_5 {
+    flex: 1 1 4rem;
+}
+
+.col_6 {
+    flex: 3 1 8rem;
+}
+
+.col_7 {
+    display: flex;
+    flex: 1 1 4rem;
+    justify-content: center;
+}
+
+.col_8 {
+    display: none;
+}
+
+.col_9 {
+    display: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* customize buttons at the bottom of the table */
+.table_buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#toggle_button {
+    background: green;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+}
+
+#toggle_button:hover {
+    transform: scale(1.05);
+}
+  
+#toggle_button:active {
+    transform: scale(0.95);
+}
+
+#clearWorkoutBtn {
+    background: red;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+}
+
+.num_exercises_text {
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.minus, .plus {
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.minus:active, .minus:hover {
+    color: #e61616;
+}
+
+.plus:active, .plus:hover {
+    color: #16e616;
+}
+
+.num_input {
+    height: 1.25rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    vertical-align: middle;
+    background: #c8c8c8;
+    border-radius: 5px;
+    border: 2px solid #6a11cb;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* customize navigation buttons for bottom section */
+
+nav {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+nav a {
+    color: white;
+    opacity: 0.7;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* nav a:focus-visible */
+nav a:hover {
+    opacity: 1;
+}
+
+nav li.active a {
+    opacity: 1;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4), 
+    -2px -2px 4px rgba(255, 255, 255, 0.4), 
+    2px -2px 4px rgba(255, 255, 255, 0.4), 
+    -2px 2px 4px rgba(255, 255, 255, 0.4);
+  }
+  
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* BMI Calculator */
+
+.bmi {
+    color: white;
+    background-color: #1A1E2A;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    width: 40rem;
+    height: auto;
+    border-radius: 5px;
+    display: none;
+}
+
+.bmi.visible {
+    display: block;
+}
+
+.bmi_section_title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2575fc;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.bmi_input_section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.bmi_height p, .bmi_weight p {
+    margin-bottom: 0.5rem;
+}
+
+.height-input, .weight-input {
+    width: 4rem;
+    height: 1.35rem;
+    border-radius: 3px;
+}
+
+.calculate_bmi_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.calculate_bmi_button button {
+    font-size: 1.25rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    background: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+    cursor: pointer;
+}
+
+.calculate_bmi_button button:hover {
+    transform: scale(1.05);
+}
+  
+.calculate_bmi_button button:active {
+    transform: scale(0.95);
+}
+
+.bmi_results_section {
+    background: #062760;
+    margin: 1rem;
+    border-radius: 5px;
+    display: none;
+}
+
+.your_bmi_is p {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.user_bmi {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2575fc;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bmi_categories {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.underweight, .normal_weight, .overweight, .obese {
+    text-align: center;
+    color: white;
+}
+
+.underweight span, .normal_weight span, .overweight span, .obese span {
+    font-weight: 600;
+    padding-top: 0.25rem;
+}
+
+
+.bmi_categories .highlighted {
+    padding-top: 0.25rem;
+    border-top: 2px solid #2575fc;
+    color: #2575fc;
+}
+
+.bmi_side_note {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* body composition tables */
+
+.body_composition {
+    color: white;
+    background-color: #1A1E2A;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    width: 42rem;
+    height: auto;
+    border-radius: 5px;
+    display: none;
+}
+
+.body_composition.visible {
+    display: block;
+}
+
+.mens_body_comp_container, .womens_body_comp_container {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.mens_body_comp_title, .womens_body_comp_title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    color: #2575fc;
+}
+
+.mens_body_comp_table, .womens_body_comp_table {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+    border: 3px solid #6a11cb;
+    border-radius: 5px;
+}
+
+.mens_body_comp_table_titles, .womens_body_comp_table_titles,
+.mens_body_comp_table_subtitle, .womens_body_comp_table_subtitle,
+.mens_very_low, .womens_very_low,
+.mens_low, .womens_low,
+.mens_good, .womens_good,
+.mens_fair, .womens_fair,
+.mens_high, .womens_high,
+.mens_very_high, .womens_very_high {
+    display: contents;
+}
+
+.mens_body_comp_category_title, .womens_body_comp_category_title {
+    grid-column: 1;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.mens_body_comp_age_title, .womens_body_comp_age_title {
+    grid-column: 2 / span 5;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.mens_body_comp_table_subtitle, .womens_body_comp_table_subtitle {
+    font-weight: 600;
+}
+
+.mens_body_comp_age_1, .womens_body_comp_age_1,
+.mens_age_1, .womens_age_1,
+.mens_age_1-2, .womens_age_1-2,
+.mens_age_1-3, .womens_age_1-3,
+.mens_age_1-4, .womens_age_1-4,
+.mens_age_1-5, .womens_age_1-5,
+.mens_age_1-6, .womens_age_1-6 {
+    grid-column: 2;
+}
+
+.mens_body_comp_age_2, .womens_body_comp_age_2,
+.mens_age_2, .womens_age_2 {
+    grid-column: 3;
+}
+
+.mens_body_comp_age_3, .womens_body_comp_age_3,
+.mens_age_3, .womens_age_3 {
+    grid-column: 4;
+}
+
+.mens_body_comp_age_4, .womens_body_comp_age_4, 
+.mens_age_4, .womens_age_4 {
+    grid-column: 5;
+}
+
+.mens_body_comp_age_5, .womens_body_comp_age_5,
+.mens_age_5, .womens_age_5 {
+    grid-column: 6;
+}
+
+/* Styling for the rows */
+.mens_very_low, .womens_very_low {
+    color: #de0e0a;
+}
+
+.mens_low, .womens_low {
+    color:#dfd10a;
+} 
+
+.mens_high, .womens_high {
+    color: #dfd10a;
+}
+
+.mens_good, .womens_good,
+.mens_fair, .womens_fair {
+    color: #18df0a;
+}
+
+.mens_very_high, .womens_very_high {
+    color: #de0e0a;
+}
+
+.mens_body_comp_side_note, .womens_body_comp_side_note {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    line-height: 1.25;
+}
+
+.mens_body_comp_side_note {
+    margin-bottom: 3rem;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Estimated Max Calculator */
+
+.reps_and_maxes {
+    color: white;
+    background-color: #1A1E2A;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    width: 40rem;
+    height: auto;
+    border-radius: 5px;
+    display: none;
+}
+
+.reps_and_maxes.visible {
+    display: block;
+}
+
+.estimated_max_calculator_title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2575fc;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.estimated_max_input_titles {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.estimated_max_input_section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.estimated_max_input_section input {
+    width: 5rem;
+    height: 1.35rem;
+    border-radius: 3px;
+}
+
+.calculate_estimated_max_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.calculate_estimated_max_button button {
+    font-size: 1.25rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    background: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+    cursor: pointer;
+}
+
+.calculate_estimated_max_button button:hover {
+    transform: scale(1.05);
+}
+  
+.calculate_estimated_max_button button:active {
+    transform: scale(0.95);
+}
+
+.estimated_max_results_section {
+    background: #062760;
+    margin: 1rem;
+    border-radius: 5px;
+    display: none;
+}
+
+.estimated_max_results_title {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.estimated_max_results_number {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2575fc;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.estimated_max_results_side_note {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 2.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-bottom: 1rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Stopwatch & Timer */
+
+.stopwatch_timer {
+    display: none;
+}
+
+.stopwatch_timer.visible {
+    display: block;
+}
+
+.stopwatch_container {
+    color: white;
+    background-color: #1A1E2A;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    width: 30rem;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #6a11cb;
+    -webkit-box-shadow: inset -1px 3px 8px 5px #6a11cb, 2px 5px 16px 10px #350b5e, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: inset -1px 3px 8px 5px #6a11cb, 2px 5px 16px 10px #350b5e, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.displayed_time {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #2575fc;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stopwatch_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stop_stopwatch, .reset_stopwatch {
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 0.75rem 1.15rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.75);;
+    color: white;
+    cursor: pointer;
+}
+
+.start_stopwatch {
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 0.75rem 1.15rem;
+    padding-left: 1.25rem;
+    background: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    color: white;
+    cursor: pointer;
+}
+
+.stop_stopwatch:hover, 
+.reset_stopwatch:hover, 
+.start_stopwatch:hover {
+    transform: scale(1.05);
+  }
+  
+.stop_stopwatch:active, 
+.reset_stopwatch:active, 
+.start_stopwatch:active {
+transform: scale(0.95);
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Timer */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: auto;
+    height: auto;
+    margin: auto;
+    margin-top: 15rem;
+    margin-bottom: 9rem;
+    background-color: #070a13;
+    color: white;
+}
+
+/* progress indicator */
+.circle-container {
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.semicircle {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: right center;
+}
+
+
+.semicircle:nth-child(1) {
+    background-color: #6a11cb;
+    z-index: 2;
+}
+
+.semicircle:nth-child(2) {
+    background-color: #6a11cb;
+    z-index: 3;
+}
+
+.semicircle:nth-child(3) {
+    background-color: white;
+    z-index: 4;
+}
+
+.outermost-circle {
+    width:390px;
+    height: 390px;
+    background-color: #1A1E2A;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+
+/* timer */
+.timer-container {
+    width: 330px;
+    height: 200px;
+    z-index: 6;
+    color: #2575fc;
+    font-style: italic;
+}
+
+.timer {
+    width: 400px;
+    height: 100px;
+    z-index: 7;
+}
+
+.timer div {
+    font-size: 70px;
+    font-weight: 700;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.timer .colon {
+    background-color: transparent;
+    width: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 15px;
+}
+
+.timer_controls {
+    margin-bottom: 5rem;
+}
+
+.timer_user_inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.timer_minutes_text {
+    margin-left: 2rem;
+    margin-right: 0.5rem;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.timer_minutes_minus, .timer_minutes_plus {
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.timer_minutes_plus {
+    margin-right: 1.25rem;
+}
+
+.timer_minutes_minus:active, .timer_minutes_minus:hover {
+    color: #e61616;
+}
+
+.timer_minutes_plus:active, .timer_minutes_plus:hover {
+    color: #16e616;
+}
+
+.timer_minutes_input {
+    height: 1.25rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    vertical-align: middle;
+    background: #c8c8c8;
+    border-radius: 5px;
+    border: 2px solid #6a11cb;
+}
+
+.timer_seconds_text {
+    margin-left: 1.25rem;
+    margin-right: 0.5rem;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.timer_seconds_minus, .timer_seconds_plus {
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.timer_seconds_minus:active, .timer_seconds_minus:hover {
+    color: #e61616;
+}
+
+.timer_seconds_plus:active, .timer_seconds_plus:hover {
+    color: #16e616;
+}
+
+.timer_seconds_input {
+    height: 1.25rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    vertical-align: middle;
+    background: #c8c8c8;
+    border-radius: 5px;
+    border: 2px solid #6a11cb;
+}
+
+.timer_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stop_timer, .reset_timer {
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 0.75rem 1.15rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.75);;
+    color: white;
+    cursor: pointer;
+}
+
+.start_timer {
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 0.75rem 1.15rem;
+    padding-left: 1.25rem;
+    background: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    color: white;
+    cursor: pointer;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* scrollbar customizations */
+body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #08080D;
+    border-radius: 10px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #2575fc;
+    border-radius: 10px;
+  }
+  
+  
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media (max-width: 985px) {
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    .labels {
+        display: none;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.25fr 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        padding: 0.25rem;
+        }
+
+    .col_1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .col_2 {
+        grid-column: 2 / span 3;
+        grid-row: 1;
+    }
+
+    .col_7 {
+        grid-column: 5;
+        grid-row: 1;
+    }
+
+    .col_3 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .col_4 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .col_5 {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .col_6 {
+        grid-column: 5;
+        grid-row: 2;
+    }
+
+    .col_8 {
+        display: block;
+        grid-column: 3;
+        grid-row: 2;
+        color: white;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media (max-width: 700px) {
+
+    .body_composition {
+        margin-top: 2rem;
+        width: 35rem;
+    }
+    
+    .reps_and_maxes {
+        margin-top: 2rem;
+        width: 35rem;
+    }
+
+    .bmi {
+        margin-top: 2rem;
+        width: 35rem;
+    }
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media (max-width: 600px) {
+
+    /* container for top of webpage (h1, barbell pic, & h3) */
+    header {
+        margin-bottom: 0.75rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    /* container for title and logo */
+    .title_and_logo {
+        gap: 0.75rem;
+    }
+
+    /* title of website */
+    h1 {
+        font-size: 2.5rem;
+        padding-right: 0.25rem;
+        
+    }
+
+    /* barbell picture next to title */
+    .barbell_pic {
+        width: 15rem;
+    }
+  
+  /* slogan under title and barbell logo */
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /*container for exercise library and my workout buttons & search bar */
+    .library_and_workout_buttons {
+        margin-bottom: 1.5rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    /* exercise library button */
+    .library_button {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .library_button span {
+        margin-left: 0.4rem;
+    }
+
+    /* my workout button */
+    .workout_button {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    }
+
+    .workout_button span {
+        margin-left: 0.4rem;
+    }
+
+    .selected_exercises_title span {
+        display: none;
+    }
+
+    .selected_exercises_title button {
+        display: block;
+        background: linear-gradient(90deg, #6a11cb 5%, #2575fc 100%);
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        font-style: italic;
+        font-weight: 500;
+    } 
+    
+    .selected_exercises_title button:hover {
+        transform: scale(1.05);
+    }
+
+    .selected_exercises_title button:active {
+        transform: scale(0.95);
+    }
+
+    .selected_exercises_container {
+        display: none;
+        margin: 0rem 0.5rem;
+    }
+
+    
+    .selected_exercises_container p {
+        margin: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .clear_exercises_button button {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* title of table */
+    .title {
+    font-size: 1.5rem;
+    margin: 0.5rem 0rem;
+    }
+
+    .col_6 {
+        display: none;
+        grid-column: 1 / span 4;
+        grid-row: 3;
+    }
+    .col_9 {
+        display: block;
+        grid-column: 5;
+        grid-row: 2;
+        align-self: center;
+        justify-self: center;
+        color: #c8c8c8;
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+    }
+
+    /* customize buttons at the bottom of the table */
+    .table_buttons {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    #toggle_button {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+
+    #clearWorkoutBtn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .num_exercises_text {
+        display: none;
+    }
+
+    .num_input {
+        height: 1.25rem;
+        width: 2.5rem;
+        font-size: 1rem;
+    }
+
+    /* nav bar */
+    nav {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    nav ul {
+        text-align: center;
+    }
+    
+    nav a {
+        font-size: 0.75rem;
+    }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* BMI Calculator */
+    .bmi {
+        color: white;
+        background-color: #1A1E2A;
+        margin: auto;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        width: 25rem;
+        height: auto;
+        border-radius: 5px;
+        display: none;
+    }
+    
+    .bmi_section_title {
+        font-size: 1.25rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .bmi_input_section {
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+    }
+    
+    .bmi_height p, .bmi_weight p {
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .height-input, .weight-input {
+        width: 3.5rem;
+        height: 1.35rem;
+        border-radius: 3px;
+    }
+    
+    .calculate_bmi_button {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    
+    .calculate_bmi_button button {
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .bmi_results_section {
+        background: #062760;
+        margin: 1rem;
+        border-radius: 5px;
+        display: none;
+    }
+    
+    .your_bmi_is p {
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .user_bmi {
+        font-size: 1.75rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bmi_categories {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .underweight, .normal_weight, .overweight, .obese {
+        text-align: center;
+        color: white;
+    }
+    
+    .underweight span, .normal_weight span, .overweight span, .obese span {
+        font-weight: 600;
+        padding-top: 0.25rem;
+    }
+    
+    
+    .bmi_categories .highlighted {
+        padding-top: 0.25rem;
+        border-top: 2px solid #2575fc;
+        color: #2575fc;
+    }
+    
+    .bmi_side_note {
+        font-size: 0.65rem;
+        margin-top: 1.75rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        padding-bottom: 0.75rem;
+    }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* body composition tables */
+    .body_composition {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        width: 30rem;
+    }
+
+    .mens_body_comp_container, .womens_body_comp_container {
+        margin-bottom: 0.75rem;
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
+
+    .mens_body_comp_title, .womens_body_comp_title {
+        font-size: 1.25rem;
+        padding-top: 0.75rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .mens_body_comp_category_title, .womens_body_comp_category_title {
+        grid-column: 1;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .mens_body_comp_age_title, .womens_body_comp_age_title {
+        grid-column: 2 / span 5;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .mens_body_comp_table_subtitle, .womens_body_comp_table_subtitle {
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+
+    .mens_very_low, .womens_very_low, .mens_low, 
+    .womens_low, .mens_good, .womens_good, .mens_fair, 
+    .womens_fair, .mens_high, .womens_high, 
+    .mens_very_high, .womens_very_high {
+        font-size: 0.75rem;
+    }
+
+    .mens_body_comp_side_note, .womens_body_comp_side_note {
+        font-size: 0.65rem;
+        margin-top: 0.5rem;
+        line-height: 1.25;
+    }
+
+    .mens_body_comp_side_note {
+        margin-bottom: 2rem;
+    }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* Stopwatch */
+
+    .stopwatch_container {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        width: 25rem;
+    }
+
+    .displayed_time {
+        font-size: 2.5rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .stopwatch_buttons {
+        gap: 2.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .stop_stopwatch, .reset_stopwatch {
+        font-size: 1.5rem;
+        border-radius: 50%;
+        padding: 0.65rem 1.05rem; 
+        /* still need to change */
+    }
+
+    .start_stopwatch {
+        font-size: 1.5rem;
+        padding: 0.65rem 1.05rem;
+        padding-left: 1.15rem;
+    }
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* Estimated Max Calculator */
+
+    .reps_and_maxes {
+        margin-top: 2.5rem;
+        margin-bottom: 1.75rem;
+        padding-bottom: 0.75rem;
+        width: 30rem;
+    }
+
+    .estimated_max_calculator_title {
+        font-size: 1.25rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .estimated_max_input_titles {
+        margin-bottom: 0.75rem;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .estimated_max_input_section {
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
+    .estimated_max_input_section input {
+        width: 4rem;
+        height: 1.35rem;
+    }
+
+    .calculate_estimated_max_button {
+        margin-top: 1.75rem;
+    }
+
+    .calculate_estimated_max_button button {
+        font-size: 1.15rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .estimated_max_results_section {
+        margin: 0.75rem;
+    }
+
+    .estimated_max_results_title {
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+        margin-top: 1.75rem;
+        font-size: 1rem;
+    }
+
+    .estimated_max_results_number {
+        font-size: 2.25rem;
+        margin-top: 0.75rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .estimated_max_results_side_note {
+        font-size: 0.65rem;
+        margin-top: 2rem;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+        padding-bottom: 1rem;
+    }
+
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media (max-width: 500px) {
+
+    /* container for top of webpage (h1, barbell pic, & h3) */
+    header {
+        margin-bottom: 0.5rem;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+
+    /* container for title and logo */
+    .title_and_logo {
+        gap: 0.5rem;
+    }
+
+    /* title of website */
+    h1 {
+        font-size: 2rem;
+        padding-right: 0.2rem;
+        
+    }
+
+    /* barbell picture next to title */
+    .barbell_pic {
+        width: 12rem;
+    }
+  
+  /* slogan under title and barbell logo */
+  h3 {
+    font-size: 1rem;
+  }
+
+  /*container for exercise library and my workout buttons & search bar */
+    .library_and_workout_buttons {
+        margin-bottom: 1rem;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        padding-top: 0.35rem;
+        padding-bottom: 0.5rem;
+    }
+
+    /* exercise library button */
+    .library_button {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .library_button span {
+        margin-left: 0.3rem;
+    }
+
+    /* my workout button */
+    .workout_button {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+    }
+
+    .workout_button span {
+        margin-left: 0.3rem;
+    }
+
+    .selected_exercises_section {
+        margin: 0.5rem 0.25rem;
+    }
+
+    .selected_exercises_title button {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.65rem;
+    }    
+
+    .selected_exercises_container {
+        display: none;
+        margin: 0rem 0.4rem;
+    }
+
+    
+    .selected_exercises_container p {
+        margin: 0.2rem;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.65rem;
+    }
+
+    .clear_exercises_button button {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    /* entire workout table */
+    .container {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+
+    /* title of table */
+    .title {
+    font-size: 1.25rem;
+    margin: 0.4rem 0rem;
+    }
+
+    .col_9 {
+        font-size: 1.35rem;
+        padding-left: 0.5rem;
+    }
+
+    .col_8 {
+        font-size: 0.9rem;
+    }
+
+    .number_input, .name_input, .weight_input, .sets_input, 
+    .reps_input, .notes_input {
+        font-size: 0.85rem;
+    }
+
+    /* customize checkboxes */
+    input[type="checkbox"]::before {
+        font-size: 0.85rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        line-height: 1.25rem;
+    }
+
+    /* customize buttons at the bottom of the table */
+    .table_buttons {
+        margin-top: 0.15rem;
+        margin-bottom: 0.25rem;
+    }
+
+    #toggle_button {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+
+    #clearWorkoutBtn {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .num_input {
+        height: 1.15rem;
+        width: 2.35rem;
+        font-size: 0.85rem;
+    }
+
+    .minus, .plus {
+        font-size: 0.85rem;
+    }
+
+    /* nav bar */
+    nav {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        margin-right: 0.25rem;
+        margin-left: 0.25rem;
+    }
+    
+    #body_mass_index_button span {
+        display: none;
+    }
+
+    #body_mass_index_button:after {
+        content: "BMI";
+    }
+
+    #body_comp_button  span {
+        display: none;
+    }
+
+    #body_comp_button:after {
+        content: "Body Comp";
+    }
+
+    #reps_and_maxes_button span {
+        display: none;
+    }
+
+    #reps_and_maxes_button:after {
+        content: "1 Rep Max";
+    }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* BMI Calculator */
+    .bmi {
+        margin-top: 2.5rem;
+        margin-bottom: 1.75rem;
+        padding-bottom: 1rem;
+        width: 22rem;
+    }
+    
+    .bmi_section_title {
+        font-size: 1.2rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .bmi_input_section {
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+    }
+    
+    .bmi_height p, .bmi_weight p {
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .height-input, .weight-input {
+        width: 3.25rem;
+        height: 1.35rem;
+    }
+    
+    .calculate_bmi_button {
+        margin-top: 1.75rem;
+    }
+    
+    .calculate_bmi_button button {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .bmi_results_section {
+        margin: 0.75rem;
+    }
+    
+    .your_bmi_is p {
+        padding-top: 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .user_bmi {
+        font-size: 1.75rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bmi_categories {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .underweight span, .normal_weight span, .overweight span, .obese span {
+        font-weight: 600;
+        padding-top: 0.25rem;
+    }
+    
+    
+    .bmi_categories .highlighted {
+        padding-top: 0.25rem;
+    }
+    
+    .bmi_side_note {
+        font-size: 0.6rem;
+        margin-top: 1.75rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        padding-bottom: 0.75rem;
+    }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* body composition tables */
+    .body_composition {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        width: 22.5rem;
+    }
+
+    .mens_body_comp_container, .womens_body_comp_container {
+        margin-bottom: 0.75rem;
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
+
+    .mens_body_comp_title, .womens_body_comp_title {
+        font-size: 1.15rem;
+        padding-top: 0.7rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .mens_body_comp_category_title, .womens_body_comp_category_title {
+        font-size: 0.9rem;
+    }
+
+    .mens_body_comp_age_title, .womens_body_comp_age_title {
+        font-size: 0.9rem;
+    }
+
+    .mens_body_comp_table_subtitle, .womens_body_comp_table_subtitle {
+        font-size: 0.8rem;
+    }
+
+    .mens_very_low, .womens_very_low, .mens_low, 
+    .womens_low, .mens_good, .womens_good, .mens_fair, 
+    .womens_fair, .mens_high, .womens_high, 
+    .mens_very_high, .womens_very_high {
+        font-size: 0.7rem;
+    }
+
+    .mens_body_comp_side_note, .womens_body_comp_side_note {
+        font-size: 0.6rem;
+        margin-top: 0.5rem;
+        line-height: 1.25;
+    }
+
+    .mens_body_comp_side_note {
+        margin-bottom: 2rem;
+    }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* Stopwatch */
+
+    .stopwatch_container {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        width: 22rem;
+    }
+
+    .displayed_time {
+        font-size: 2.75rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .stopwatch_buttons {
+        gap: 2.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .stop_stopwatch, .reset_stopwatch {
+        font-size: 1.5rem;
+        padding: 0.65rem 1.05rem; 
+    }
+
+    .start_stopwatch {
+        font-size: 1.5rem;
+        padding: 0.65rem 1.05rem;
+        padding-left: 1.15rem;
+    }
+
+
+    /* Timer */
+
+    .main-container {
+        width: auto;
+        height: auto;
+        margin: auto;
+        margin-top: 15rem;
+        margin-bottom: 9rem;
+        background-color: #070a13;
+        color: white;
+    }
+
+    /* progress indicator */
+    .circle-container {
+        margin: auto;
+        width: 350px;
+        height: 350px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .semicircle {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: right center;
+    }
+
+
+    .semicircle:nth-child(1) {
+        background-color: #6a11cb;
+        z-index: 2;
+    }
+
+    .semicircle:nth-child(2) {
+        background-color: #6a11cb;
+        z-index: 3;
+    }
+
+    .semicircle:nth-child(3) {
+        background-color: white;
+        z-index: 4;
+    }
+
+    .outermost-circle {
+        width:340px;
+        height: 340px;
+        background-color: #1A1E2A;
+        border-radius: 50%;
+        z-index: 5;
+    }
+
+
+    /* timer */
+    .timer-container {
+        width: 330px;
+        height: 200px;
+        z-index: 6;
+        color: #2575fc;
+        font-style: italic;
+    }
+
+    .timer {
+        width: 400px;
+        height: 100px;
+        z-index: 7;
+    }
+
+    .timer div {
+        font-size: 65px;
+        font-weight: 700;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+    }
+
+    .timer .colon {
+        background-color: transparent;
+        width: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: 15px;
+    }
+
+    .timer_controls {
+        margin-bottom: 5rem;
+    }
+
+    .timer_user_inputs {
+        margin-bottom: 1.5rem;
+    }
+
+    .timer_minutes_text {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        font-size: 1.15rem;
+    }
+
+    .timer_minutes_text  span {
+        display: none;
+    }
+
+    .timer_minutes_text:after {
+        content: "Min:";
+    }
+
+    .timer_minutes_minus, .timer_minutes_plus {
+        font-size: 0.85rem;
+    }
+
+    .timer_minutes_plus {
+        margin-right: 1.25rem;
+        font-size: 0.85rem;
+    }
+
+    .timer_minutes_input {
+        height: 1.25rem;
+        width: 2.75rem;
+        font-size: 1rem;
+    }
+
+    .timer_seconds_text {
+        margin-left: 1.25rem;
+        margin-right: 0.5rem;
+        font-size: 1.15rem;
+    }
+
+    .timer_seconds_text  span {
+        display: none;
+    }
+
+    .timer_seconds_text:after {
+        content: "Sec:";
+    }
+
+    .timer_seconds_minus, .timer_seconds_plus {
+        font-size: 0.85rem;
+    }
+
+    .timer_seconds_input {
+        height: 1.25rem;
+        width: 2.75rem;
+        font-size: 1rem;
+    }
+
+    .timer_buttons {
+        gap: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .stop_timer, .reset_timer {
+        font-size: 1.75rem;
+        padding: 0.7rem 1.1rem;
+    }
+
+    .start_timer {
+        font-size: 1.75rem;
+        padding: 0.7rem 1.1rem;
+        padding-left: 1.1rem;
+    }
+
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* Estimated Max Calculator */
+
+    .reps_and_maxes {
+        margin-top: 2.5rem;
+        margin-bottom: 1.75rem;
+        padding-bottom: 0.75rem;
+        width: 22rem;
+    }
+
+    .estimated_max_calculator_title {
+        font-size: 1.2rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .estimated_max_input_titles {
+        margin-bottom: 0.75rem;
+        margin-top: 0.85rem;
+        font-size: 0.75rem;
+    }
+
+    .estimated_max_input_section {
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
+    .estimated_max_input_section input {
+        width: 3.25rem;
+        height: 1.35rem;
+    }
+
+    .calculate_estimated_max_button {
+        margin-top: 1.75rem;
+    }
+
+    .calculate_estimated_max_button button {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .estimated_max_results_section {
+        margin: 0.75rem;
+    }
+
+    .estimated_max_results_title {
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+        margin-top: 1.75rem;
+        font-size: 0.85rem;
+    }
+
+    .estimated_max_results_number {
+        font-size: 2rem;
+        margin-top: 0.75rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .estimated_max_results_side_note {
+        font-size: 0.6rem;
+        margin-top: 2rem;
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+        padding-bottom: 1rem;
+    }
+
+}
+
+
+    
