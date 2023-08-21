@@ -1802,7 +1802,7 @@ body::-webkit-scrollbar {
         cursor: pointer;
         color: transparent;
         border-radius: 5px;
-        margin-bottom: 0.5rem;
+        opacity: 0;
     }
 
     input[type="checkbox"]:checked::before {
