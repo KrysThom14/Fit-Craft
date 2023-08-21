@@ -1791,13 +1791,13 @@ body::-webkit-scrollbar {
     /* customize checkboxes */
     input[type="checkbox"]::before {
         content: "\2714";
-        font-size: 0.85rem;
+        font-size: 1rem;
         display: inline-block;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 1.5rem;
+        height: 1.5rem;
         border: 2px solid rgb(30, 30, 30);
         background-color: rgb(188, 188, 188);
-        line-height: 1.25rem;
+        line-height: 1.5rem;
         text-align: center;
         cursor: pointer;
         color: transparent;
