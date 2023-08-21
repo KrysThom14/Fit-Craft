@@ -733,6 +733,7 @@ font-size: 0.8rem;
     margin-left: 0.75rem;
     width: 4.2rem;
     font-size: 0.8rem;
+    color: black;
   }
   
   .add_to_workout_button {
@@ -744,6 +745,7 @@ font-size: 0.8rem;
     margin-bottom: 0.75rem;
     width: 6.7rem;
     font-size: 0.8rem;
+    color: black;
   }
   
   .inside_buttons_and_search {
