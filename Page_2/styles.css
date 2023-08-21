@@ -1811,6 +1811,10 @@ body::-webkit-scrollbar {
         border: 2px solid black;
     }
 
+    .checkbox {
+        margin-top: 0.4rem;
+    }
+
     /* customize buttons at the bottom of the table */
     .table_buttons {
         margin-top: 0.15rem;
