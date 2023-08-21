@@ -1837,6 +1837,7 @@ body::-webkit-scrollbar {
         height: 1.15rem;
         width: 2.35rem;
         font-size: 0.85rem;
+        padding-bottom: 0.15rem;
         vertical-align: middle;
     }
 
