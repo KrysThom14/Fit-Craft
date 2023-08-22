@@ -1788,11 +1788,10 @@ body::-webkit-scrollbar {
         font-size: 0.85rem;
     }
 
-    .col_7 {
-        display: flex;
-        justify-content: center;
+    input[type="checkbox"]::before {
+        display: hidden;
     }
-
+    
     .checkbox {
         accent-color: green;
         width: 16px;
@@ -1824,11 +1823,7 @@ body::-webkit-scrollbar {
         height: 1.15rem;
         width: 2.35rem;
         font-size: 0.85rem;
-        resize: none;
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding-bottom: 0.5rem;
     }
 
