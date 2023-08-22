@@ -1789,7 +1789,7 @@ body::-webkit-scrollbar {
     }
 
     input[type="checkbox"]::before {
-        display: hidden;
+        display: inline-block;
     }
     
     .checkbox {
@@ -1818,15 +1818,23 @@ body::-webkit-scrollbar {
     }
 
     .num_input {
-        height: 1.15rem;
+        display: none;
+/*         height: 1.15rem;
         width: 2.35rem;
         font-size: 0.85rem;
-        text-align: center;
-        padding-bottom: 0.25rem;
+        text-align: center; */
     }
 
     .minus, .plus {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
+    }
+
+    .minus {
+        margin-right: 0.15rem;
+    }
+
+    .plus {
+        margin-left: 0.15rem;
     }
 
     /* nav bar */
