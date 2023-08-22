@@ -1794,10 +1794,8 @@ body::-webkit-scrollbar {
     
     .checkbox {
         accent-color: green;
-        width: 1px;
-        height: 1px;
-        justify-self: center;
-        align-self: center;
+        width: 0px;
+        height: 0px;
     }
 
     /* customize buttons at the bottom of the table */
@@ -1830,11 +1828,11 @@ body::-webkit-scrollbar {
     }
 
     .minus {
-        margin-right: 0.15rem;
+        margin-right: 0.5rem;
     }
 
     .plus {
-        margin-left: 0.15rem;
+        margin-left: 0.5rem;
     }
 
     /* nav bar */
