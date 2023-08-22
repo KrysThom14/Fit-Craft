@@ -2153,7 +2153,7 @@ body::-webkit-scrollbar {
     }
 
     .timer_minutes_input {
-        height: 1.25rem;
+        height: 1.5rem;
         width: 2.75rem;
         font-size: 1rem;
     }
@@ -2177,7 +2177,7 @@ body::-webkit-scrollbar {
     }
 
     .timer_seconds_input {
-        height: 1.25rem;
+        height: 1.5rem;
         width: 2.75rem;
         font-size: 1rem;
     }
